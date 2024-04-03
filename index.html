@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <meta name="description" content="Descrição do seu site aqui. Esta é uma descrição curta que aparecerá nos resultados de busca.">
+    <meta name="keywords" content="palavra-chave1, palavra-chave2, palavra-chave3">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+    <script src="../JavaScript/java.js"></script>
+
+</head>
+<body>
+
+    <div id="divBusca">
+        <div id="imgLogo">
+        <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
+        </div>
+        <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
+        <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
+        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
+        <a href="sacola.html" id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></a>
+        <a href="sacola.html"  id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></a>
+        <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
+        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+
+    </div>
+    <nav class="opcao">
+        <a id="home" href="index.html">🏠Home</a>
+        <a id="cachorro" href="pagCachorro.html">🐕Cachorro</a>
+        <a id="gato" href="pagGato.html">🐈Gato</a>
+        <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
+        <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
+        <a id="outros" href="#">🐇Outros Pets</a>
+        <a id="servico" href="#">📋 Serviços</a>
+    </nav>
+
+
+    
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="../Imagens/carrosselImg1.jpg" alt="Imagem 1">
+            </div>
+            <div class="carousel-item">
+                <img src="../Imagens/carrosselImg2.jpg" alt="Imagem 2">
+            </div>
+            <div class="carousel-item">
+                <img src="../Imagens/carrosselImg3.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel-inner');
+        let slideIndex = 0;
+
+        function showSlides() {
+            carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= 3) {
+                slideIndex = 0;
+            }
+            showSlides();
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = 2;
+            }
+            showSlides();
+        }
+    </script>
+
+<script>
+    function adicionarAoCarrinho() {
+        window.location.href = "sacola.html"; 
+    }
+</script>
+
+
+
+<div class="servi">
+    <a id="banho" href="#">Banho e Tosa </a>
+    <a id="veterinario" href="#">Veterinario</a>
+    <a id="hospedagem" href="#">Hospedagem</a>
+    <a id="adestramento" href="#">Adestramento</a>
+</div>
+
+<h2 id="proDestaque">Descontos imperdíveis para encher o carrinho ⭐</h2>
+
+<section class="produtos">
+    <div class="produto">
+        <h2 id="promo">Promoção</h2>
+        <img src="../Imagens/imgRacao.jpg" alt="Alimento para Pets">
+        <h3>Alimento para Pets</h3>
+        <p id="preco">R$ 49,99</p>
+        <button onclick="adicionarAoCarrinho('Alimento para Pets', 'R$ 49,99', '../Imagens/imgRacao.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+    <script>
+        function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            
+            cart.push({
+                name: nomeProduto,
+                price: precoProduto,
+                image: imagemProduto
+            });
+    
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            const mensagem = document.createElement('div');
+            mensagem.textContent = 'Produto adicionado a Sacola!';
+            mensagem.classList.add('mensagem');
+            document.body.appendChild(mensagem);
+    
+            setTimeout(function() {
+                mensagem.style.display = 'none';
+            }, 3000);
+    
+        }
+    </script>
+
+
+    <div class="produto">
+        <h2 id="frete2">Frente Gratis</h2>
+        <img src="../Imagens/imgcasinha.jpg" alt="Casinha">
+        <h3>Casinha</h3>
+        <p id="preco">R$ 199,99</p>
+        <button onclick="adicionarAoCarrinho('Casinha', 'R$ 199,99', '../Imagens/imgcasinha.jpg')">Adicionar ao carrinho 🛒</button>    
+    </div>
+
+    <div class="produto">
+        <h2 id="frete2">50% OFF</h2>
+        <img src="../Imagens/imgMedicamento.jpg" alt="Medicamento">
+        <h3>Medicamento</h3>
+        <p id="preco">R$ 99,99</p>
+        <button onclick="adicionarAoCarrinho('Medicamento', 'R$ 99,99', '../Imagens/imgMedicamento.jpg')">Adicionar ao carrinho 🛒</button>  
+    </div>
+
+    <div class="produto">
+        <h2 id="promo">Ilimitado</h2>
+        <img src="../Imagens/imgRemedio.jpg" alt="Antipulga">
+        <h3>Antipulga</h3>
+        <p id="preco">R$ 69,99</p>
+        <button onclick="adicionarAoCarrinho('Antipulga', 'R$ 69,99', '../Imagens/imgRemedio.jpg')">Adicionar ao carrinho 🛒</button>  
+    </div>
+</section>
+
+
+<h2 id="proFavorito">Favoritos dos Cachorros 🐶</h2>
+
+<section class="produtos">
+    <div class="produto">
+        <h2 id="frete2">25% OFF</h2>
+        <img src="../Imagens/racao.jpg" alt="Alimento para Pets">
+        <h3>Ração</h3>
+        <p class="preco">R$ 79,99</p>
+        <button onclick="adicionarAoCarrinho('Ração', 'R$ 79,99', '../Imagens/racao.jpg')">Adicionar ao carrinho 🛒</button>  
+    </div>
+
+    <div class="produto">
+        <h2 id="estoque2">25% em estoque</h2>
+        <img src="../Imagens/tapetes.jpg" alt="Casinha">
+        <h3>Tapetes</h3>
+        <p class="preco">R$ 99,99</p>
+        <button onclick="adicionarAoCarrinho('Tapetes', 'R$ 99,99', '../Imagens/tapetes.jpg')">Adicionar ao carrinho 🛒</button> 
+    </div>
+
+    <div class="produto">
+        <h2 id="promo">Promoção</h2>
+        <img src="../Imagens/bolinha.jpg" alt="Medicamento">
+        <h3>Bolinha</h3>
+        <p class="preco">R$ 9,99</p>
+        <button onclick="adicionarAoCarrinho('Bolinha', 'R$ 9,99', '../Imagens/bolinha.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+
+    <div class="produto">
+        <h2 id="frete2">75% OFF</h2>
+        <img src="../Imagens/petiscos.jpg" alt="Antipulga">
+        <h3>Petiscos</h3>
+        <p class="preco">R$ 19,99</p>
+        <button onclick="adicionarAoCarrinho('Petiscos', 'R$ 19,99', '../Imagens/petiscos.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+</section>
+
+<h2 id="proFavoritoGatos">Favoritos dos Gatos 🐈</h2>
+
+<section class="produtos">
+    <div class="produto">
+        <img src="../Imagens/racaoGato.jpg" alt="Alimento para Pets">
+        <h3>Ração Seca</h3>
+        <p class="preco">R$ 99,99</p>
+        <button onclick="adicionarAoCarrinho('Ração Seca', 'R$ 99,99', '../Imagens/racaoGato.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+
+    <div class="produto">
+        <img src="../Imagens/antispulgaGato.jpg" alt="Casinha">
+        <h3>Antipulgas</h3>
+        <p class="preco">R$ 79,99</p>
+        <button onclick="adicionarAoCarrinho('Antipulgas', 'R$ 79,99', '../Imagens/antispulgaGato.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+
+    <div class="produto">
+        <img src="../Imagens/caixaTransporte.jpg" alt="Medicamento">
+        <h3>Caixa de Transporte</h3>
+        <p class="preco">R$ 199,99</p>
+        <button onclick="adicionarAoCarrinho('Caixa de Transporte', 'R$ 199,99', '../Imagens/caixaTransporte.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+
+    <div class="produto">
+        <img src="../Imagens/arranhadores.jpg" alt="Antipulga">
+        <h3>Arranhadores</h3>
+        <p class="preco">R$ 109,99</p>
+        <button onclick="adicionarAoCarrinho('Arranhadores', 'R$ 109,99', '../Imagens/arranhadores.jpg')">Adicionar ao carrinho 🛒</button>
+    </div>
+    
+</section>
+
+<!-- <div class="servic"> 
+    <a id="frete" href="#">🚛 Frete Grátis Brasil</a>
+    <a id="semJuros" href="#">💳 Até 10x Sem Juros</a>
+    <a id="retire" href="#">🏪 Retire e Troque na Loja</a>
+    
+</div>-->
+
+<img src="../Imagens/imgBaixo.gif" alt="">
+<h3 id="proFavoritoGatos">Bem-estar e cuidados</h3>
+
+<section class="novosservicos">
+    <div class="produtonovo">
+        <h4>Hospedagem</h4>
+        <img id="ajuste" src="../Imagens/travesseiro2.png" alt="Alimento para Pets">
+        <h3>Pro seu pet passar uma noite (ou mais)</h3>
+        <p class="preco">Quando você for viajar e não puder levar seu pet, nós o hospedamos e garantimos muita diversão e alegria enquanto você estiver fora.</p>
+        <button id="butao">Agendar hospedagem</button>
+    </div>
+    <div class="produtonovo">
+        <h4>Pet Sitter</h4>
+        <img src="../Imagens/casaPet.png" alt="Alimento para Pets">
+        <h3>Pro pet que prefere ficar em casa</h3>
+        <p class="preco">Se seu pet prefere ficar no aconchego da própria casa, nossos pet sitters vão até ele para cuidar e fazer companhia.</p>
+        <button id="butao">Agendar pet sitter</button>
+    </div>
+    <div class="produtonovo">
+        <h4>Creche</h4>
+        <img src="../Imagens/creche.png" alt="Alimento para Pets">
+        <h3>Pro seu pet brincar durante o dia</h3>
+        <p class="preco">Ideal para quando você não quer deixar o seu pet sozinho durante o dia. Na nossa creche ele aproveira para se divertir muito com outros pets.</p>
+        <button id="butao">Agendar creche</button>
+    </div>
+
+</section>
+
+
+<footer class="rodape">
+
+    <ul>
+    <h3>Institucional</h3>
+    <li><a href="#">Sobre a Petz</a></li>
+    <li><a href="#">Trabalhe Conosco</a></li>
+    <li><a href="#">Canal de Denúncias</a></li>
+    <li><a href="#">Relações com Investidores</a></li>
+    <li><a href="#">Portal Petz</a></li>
+    <li><a href="#">Expansão</a></li>
+    <li><a href="#">Mapa do Site</a></li>
+    </ul>
+
+    <ul>
+    <h3>Nossas Políticas</h3>
+    <li><a href="#">Entrega e Frete</a></li>
+    <li><a href="#">Pagamentos e Reembolso</a></li>
+    <li><a href="#">Trocas e Devolução</a></li>
+    <li><a href="#">Campanhas e Promoções</a></li>
+    <li><a href="#">Política de Privacidade</a></li>
+    </ul>
+
+    <ul>
+    <h3>Ajuda</h3>
+    <li><a href="#">Atendimento</a></li>
+    <li><a href="#">Meus Pedidos</a></li>
+    <li><a href="#">Meu Cadastro</a></li>
+    <li><a href="#">Minhas Assinaturas</a></li>
+    <li><a href="#">Ouvidoria</a></li>
+    </ul>
+
+    <ul>
+    <h3>Redes Sociais</h3>
+    <li><a href="#">Instragam</a></li>
+    <li><a href="#">Fecebook</a></li>
+    <li><a href="#">Youtube</a></li>
+    <li><a href="#">Tik Tok</a></li>
+    <li><a href="#">Linkedln</a></li>
+    </ul>
+
+</footer>
+
+
+</body>
+</html>

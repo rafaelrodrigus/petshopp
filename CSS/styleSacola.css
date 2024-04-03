@@ -1,0 +1,148 @@
+#divBusca {
+    display: flex;
+    align-items: center; 
+}
+
+#imgLogo {
+   
+    margin-top: -100px;
+    margin-right: 10px; 
+}
+
+#txtBusca {
+    margin-top: -90px;
+    height: 40px;
+    width: 700px; 
+    padding: 5px; 
+    border: 2px solid #ccc; 
+    border-radius: 20px; 
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    /* Ajustou o tamanho do botão */
+    width: 30px;
+    height: 30px;
+    margin-top: -90px;
+}
+
+
+img {
+    max-height: 100%;
+    width: auto; 
+}
+
+#telefone {
+    width: 30px;
+    margin: 40px;
+    margin-top: -50px;
+}
+
+#favorito{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+}
+#sacola{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+}
+#perfil{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+}
+
+#btnEntrar{
+    margin-left: -90px;
+}
+
+#home {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+
+#home:hover {
+    transform: scale(1.5);
+  }
+  
+#cachorro {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+
+}
+
+#cachorro:hover {
+    transform: scale(1.5);
+  }
+  
+#gato {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#gato:hover {
+    transform: scale(1.5);
+  }
+#peixe {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#peixe:hover {
+    transform: scale(1.5);
+  }
+#passaro {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#passaro:hover {
+    transform: scale(1.5);
+  }
+#outros {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+
+#outros:hover {
+    transform: scale(1.5);
+  }
+#servico {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#servico:hover {
+    transform: scale(1.5);
+  }
+
+.opcao {
+    background-image: linear-gradient(to right, rgba(123,104,238), rgb(75,0,130));
+    border: 2px solid ;
+    border-color: black;
+    border-radius: 110px;
+    margin-top: -80px;
+    font-size: 25px;
+    display: flex; 
+}

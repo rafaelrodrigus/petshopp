@@ -1,0 +1,343 @@
+#divBusca {
+    display: flex;
+    align-items: center; 
+}
+
+#imgLogo {
+   
+    margin-top: -100px;
+    margin-right: 10px; 
+}
+
+#txtBusca {
+    margin-top: -90px;
+    height: 40px;
+    width: 700px; 
+    padding: 5px; 
+    border: 2px solid #ccc; 
+    border-radius: 20px; 
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-top: -90px;
+}
+
+img {
+    max-height: 100%; 
+    width: auto; 
+}
+
+#telefone {
+    width: 30px;
+    margin: 40px;
+    margin-top: -50px;
+}
+
+#favorito{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+}
+#sacola{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+}
+#perfil{
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
+    
+}
+
+#home {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+    
+}
+
+#home:hover {
+    transform: scale(1.5);
+  }
+  
+#cachorro {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+
+}
+
+#cachorro:hover {
+    transform: scale(1.5);
+  }
+  
+#gato {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#gato:hover {
+    transform: scale(1.5);
+  }
+#peixe {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#peixe:hover {
+    transform: scale(1.5);
+  }
+#passaro {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#passaro:hover {
+    transform: scale(1.5);
+  }
+#outros {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+
+#outros:hover {
+    transform: scale(1.5);
+  }
+#servico {
+    color: black;
+    margin: 20px;
+    margin-left: 60px;
+    text-decoration: none;
+    transition: 500ms linear; 
+}
+#servico:hover {
+    transform: scale(1.5);
+  }
+
+.opcao {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    border: 2px solid ;
+    border-color: black;
+    border-radius: 110px;
+    margin-top: -80px;
+    font-size: 25px;
+    display: flex; 
+}
+
+.propaganda{
+    display: flex;
+    margin: 50px;
+}
+
+.propaganda div{
+    margin-left: 50px;
+}
+
+/* -------filtros------------ */
+
+.filtros hr{
+     margin: 10px 0;
+     margin-right: 1250px;
+      
+}
+
+.pt{
+    display: flex;
+}
+
+
+.produto {
+    border: 1px solid;
+    box-shadow: 4px 3px 3px black;
+    border-radius: 40px;
+    display: inline-block;
+    width: calc(25% - 60px); 
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.produto button {
+    background-color: #4cdd8d;
+    color: black;
+    width: 200PX;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 15PX;
+    text-align: center;
+    
+}
+
+.produto button:hover {
+    background-color: #05913a;
+    
+}
+#titulo{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+
+
+
+.produto {
+    position: relative;
+    overflow: hidden;
+}
+
+.produto img {
+    transition: transform 0.3s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.1); 
+}
+
+
+ .filtros {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            float: left;
+            width: calc(25% - 10px); 
+        }
+
+        .produtos {
+            float: left; 
+            width: 75%;
+        }
+
+        .filtros h3 {
+            margin-top: 0;
+        }
+
+        .filtros hr {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        .filtros label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filtros input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        
+        @media only screen and (min-width: 768px) {
+            .filtros {
+                float: left;
+                width: 25%;
+                margin-right: 20px;
+            }
+
+            .produtos {
+                float: left;
+                width: 75%;
+            }
+
+            .produtos .produto {
+                float: left;
+                width: calc(25% - 20px);
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .filtros, .produtos {
+                float: none;
+                width: 100%;
+            }
+
+            .produtos .produto {
+                width: calc(50% - 20px);
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 90%; 
+            margin-top: 20px; 
+        }
+
+        .filtros {
+            width: 30%; 
+        }
+
+        .produtos {
+            width: 65%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .produto {
+            width: calc(30% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+        }
+
+        #image{
+            margin-left: -70px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            height: 300px;
+        }
+
+        .container {
+            position: relative;
+          }
+          
+          #texto {
+            color: white;
+            position: absolute;
+            font-size: 32px;
+            left: 950px;
+            top: 135px;
+            bottom: 250px;
+          }
+
+       

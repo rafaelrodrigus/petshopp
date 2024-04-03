@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../CSS/styleCachorro.css">]
+
+</head>
+
+</head>
+<body>
+
+    <div id="divBusca">
+        <div id="imgLogo">
+            <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
+        </div>
+        <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
+        <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
+        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
+        <button id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></button>
+        <button id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></button>
+        <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
+        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+    </div>
+
+    <nav class="opcao">
+        <a id="home" href="index.html">🏠Home</a>
+        <a id="cachorro" href="pagCachorro.html">🐕Cachorro</a>
+        <a id="gato" href="pagGato.html">🐈Gato</a>
+        <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
+        <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
+        <a id="outros" href="#">🐇Outros Pets</a>
+        <a id="servico" href="#">📋 Serviços</a>
+    </nav>
+
+    <div class="container">
+        <section class="filtros">
+            <h3>Filtros de pesquisa avançada</h3>
+            <hr>
+            <p>Limpar filtro</p>
+            <hr>
+            <h3>Marca</h3>
+            <label><input type="checkbox" name="marca" value="marca1"> Marca 1</label>
+            <label><input type="checkbox" name="marca" value="marca2"> Marca 2</label>
+            <label><input type="checkbox" name="marca" value="marca3"> Marca 3</label>
+            <hr>
+
+            <h3>Faixa de Preço</h3>
+            <label><input type="checkbox" name="preco" value="0-25"> R$ 0,00 - R$ 25,00 (292)</label>
+            <label><input type="checkbox" name="preco" value="50-100"> R$ 50,00 - R$ 100,00 (216)</label>
+            <label><input type="checkbox" name="preco" value="100-200"> R$ 100,00 - R$ 200,00 (87)</label>
+            <label><input type="checkbox" name="preco" value="200+"> + R$ 200,00 (2)</label>
+            <hr>
+
+            <h3>Características do Produto</h3>
+            <label><input type="checkbox" name="caracteristicas" value="caracteristica1"> Característica 1</label>
+            <label><input type="checkbox" name="caracteristicas" value="caracteristica2"> Característica 2</label>
+            <label><input type="checkbox" name="caracteristicas" value="caracteristica3"> Característica 3</label>
+        </section>
+
+        <section class="produtos">
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span>
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <h3>Ração Seca para Cães</h3>
+                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+        </section>
+    </div>
+    
+    
+   </body>
+   </html>
+   
+
+    
+
+
+    
+
+
+
+
+
+
+

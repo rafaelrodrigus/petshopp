@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <meta name="description" content="Descrição do seu site aqui. Esta é uma descrição curta que aparecerá nos resultados de busca.">
+    <meta name="keywords" content="palavra-chave1, palavra-chave2, palavra-chave3">
+    <link rel="stylesheet" href="../CSS/styleSacola.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+</head>
+<body>
+
+</head>
+<body>
+
+    <div id="divBusca">
+        <div id="imgLogo">
+            <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
+        </div>
+        <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
+        <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
+        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
+        <button id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></button>
+        <button id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></button>
+        <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
+        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+    </div>
+
+    <nav class="opcao">
+        <a id="home" href="index.html">🏠Home</a>
+        <a id="cachorro" href="pagCachorro.html">🐕Cachorro</a>
+        <a id="gato" href="pagGato.html">🐈Gato</a>
+        <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
+        <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
+        <a id="outros" href="#">🐇Outros Pets</a>
+        <a id="servico" href="#">📋 Serviços</a>
+    </nav>
+    <h1>Carrinho de Compras</h1>
+    <ul id="cart"></ul>
+    <div id="totalCarrinho"><strong>Total: R$ 0.00</strong></div>
+    <a href="index.html">Voltar para a Loja</a>
+
+    <script>
+        function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const itemId = Date.now();
+
+            cart.push({
+                id: itemId,
+                name: nomeProduto,
+                price: precoProduto,
+                image: imagemProduto
+            });
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            displayCart();
+        }
+
+        function removerDoCarrinho(itemId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const index = cart.findIndex(item => item.id === itemId);
+            if (index !== -1) {
+                cart.splice(index, 1);
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                displayCart();
+
+                calcularTotal();
+            }
+        }
+
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            const cartList = document.getElementById('cart');
+
+            cartList.innerHTML = '';
+
+            if (cart && cart.length > 0) {
+                cart.forEach(item => {
+                    const cartItem = document.createElement('li');
+
+                    const itemImage = document.createElement('img');
+                    itemImage.src = item.image;
+                    itemImage.alt = item.name;
+                    cartItem.appendChild(itemImage);
+
+                    const itemName = document.createElement('p');
+                    itemName.textContent = item.name;
+                    cartItem.appendChild(itemName);
+
+                    const itemPrice = document.createElement('p');
+                    itemPrice.textContent = item.price;
+                    cartItem.appendChild(itemPrice);
+
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remover';
+                    removeButton.onclick = function() {
+                        removerDoCarrinho(item.id);
+                    };
+                    cartItem.appendChild(removeButton);
+
+                    cartList.appendChild(cartItem);
+                });
+            } else {
+                cartList.innerHTML = '<p>Carrinho vazio</p>';
+            }
+        }
+
+        function calcularTotal() {
+            let total = 0;
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            for (let item of cart) {
+                total += parseFloat(item.price.replace('R$ ', ''));
+            }
+
+            const totalCarrinhoElement = document.getElementById('totalCarrinho');
+            if (totalCarrinhoElement) {
+                totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+            }
+        }
+
+        window.onload = displayCart;
+    </script>
+
+</body>
+
