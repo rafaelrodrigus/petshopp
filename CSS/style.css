@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tac+One&display=swap');
 #divBusca {
     display: flex;
     align-items: center; 
@@ -53,11 +55,18 @@ img {
 #passaro,
 #outros,
 #servico {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
     color: black;
     margin: 20px;
     margin-left: 60px;
     text-decoration: none;
     transition: transform 500ms linear; 
+}
+#home{
+    margin-left: 150px;
 }
 
 #home:hover,
@@ -77,6 +86,9 @@ img {
     margin-top: -80px;
     font-size: 25px;
     display: flex; 
+    width: 80%;
+    margin-left: 200px;
+    height: 70px;
 }
 
 .carousel {
@@ -140,6 +152,9 @@ img {
     margin: 40px;
     text-decoration: none;
     padding: 10px 20px;
+}
+#banho{
+    margin-left: 300px;
 }
 
 .rodape {
@@ -295,8 +310,19 @@ p {
 }
 
 p#preco {
-    color: chocolate;
-    font-size: 18px;
+    font-family: "Tac One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.preco{
+    font-family: "Tac One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
 }
 
 #proDestaque,
@@ -311,7 +337,7 @@ p#preco {
 #frete2,
 #estoque,
 #estoque2 {
-    margin-left: -200px;
+    margin-left: -300px;
     font-style: oblique;
     color: rgb(162, 20, 228);
     transform: rotate(5000deg);
@@ -354,4 +380,27 @@ p#preco {
      font-family: Arial;
  }
 
+#imgLogo{
+    margin-left: 200px
+}
+
+.pre{
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+#letra{
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+
+}
+#ft{
+    height: 400px;
+}
+
+.novosservicos{
+    margin-left: 400px;
+}
  

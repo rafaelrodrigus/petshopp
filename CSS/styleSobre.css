@@ -55,8 +55,10 @@ body {
     padding: 20px 0;
   }
   
+  #imgLogo{
+    margin-left: 200px
+}
 
-  
   
   #divBusca {
     display: flex;
@@ -105,11 +107,19 @@ img {
     margin-right: 30px;
     margin-top: -90px;
 }
-#telefone
-{
-    margin-left: 30px;
-    height: 30px;
+
+#favorito{
+  height: 30px;
 }
+#sacola{
+  height: 30px;
+}
+
+#telefone{
+  height: 30px;
+  margin-left: 30px;
+}
+
 
 #home,
 #cachorro,
@@ -123,6 +133,9 @@ img {
     margin-left: 60px;
     text-decoration: none;
     transition: transform 500ms linear; 
+}
+#home{
+    margin-left: 150px;
 }
 
 #home:hover,
@@ -142,10 +155,15 @@ img {
     margin-top: -80px;
     font-size: 25px;
     display: flex; 
+    width: 80%;
+    margin-left: 200px;
+    height: 70px;
 }
-
 .icon-small {
     width: 30px;
     height: 30px;
     margin-right: 10px; /* Ajuste conforme necessário */
+}
+#imgLogo{
+  margin-left: 200px
 }

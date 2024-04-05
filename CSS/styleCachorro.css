@@ -3,8 +3,13 @@
     align-items: center; 
 }
 
-#imgLogo {
-   
+#btnEntrar{
+    color: black;
+    margin-top: -90px;
+    margin-left: -30px;
+}
+
+#imgLogo {   
     margin-top: -100px;
     margin-right: 10px; 
 }
@@ -13,14 +18,9 @@
     margin-top: -90px;
     height: 40px;
     width: 700px; 
-    padding: 5px; 
+    padding: 5px;
     border: 2px solid #ccc; 
     border-radius: 20px; 
-}
-#btnEntrar{
-    color: black;
-    margin-top: -90px;
-    margin-left: -30px;
 }
 
 button {
@@ -37,119 +37,66 @@ img {
     width: auto; 
 }
 
-#telefone {
-    width: 30px;
-    margin: 40px;
-    margin-top: -50px;
-    margin-left: 30px;
-    height: 30px;
+#telefone,
+#favorito,
+#sacola,
+#perfil {
+    width: 35px;
+    margin-right: 30px;
+    margin-top: -90px;
 }
 
 #favorito{
-    width: 35px;
-    margin-right: 30px;
-    margin-top: -90px;
+  height: 30px;
 }
 #sacola{
-    width: 35px;
-    margin-right: 30px;
-    margin-top: -90px;
-}
-#perfil{
-    width: 35px;
-    margin-right: 30px;
-    margin-top: -90px;
-    
+  height: 30px;
 }
 
-#home {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
-    
+#telefone{
+  height: 30px;
+  margin-left: 30px;
 }
 
-#home:hover {
-    transform: scale(1.5);
-  }
-  
-#cachorro {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
 
-}
-
-#cachorro:hover {
-    transform: scale(1.5);
-  }
-  
-#gato {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
-}
-#gato:hover {
-    transform: scale(1.5);
-  }
-#peixe {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
-}
-#peixe:hover {
-    transform: scale(1.5);
-  }
-#passaro {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
-}
-#passaro:hover {
-    transform: scale(1.5);
-  }
-#outros {
-    color: black;
-    margin: 20px;
-    margin-left: 60px;
-    text-decoration: none;
-    transition: 500ms linear; 
-}
-
-#outros:hover {
-    transform: scale(1.5);
-  }
+#home,
+#cachorro,
+#gato,
+#peixe,
+#passaro,
+#outros,
 #servico {
     color: black;
     margin: 20px;
     margin-left: 60px;
     text-decoration: none;
-    transition: 500ms linear; 
+    transition: transform 500ms linear; 
 }
+#home{
+    margin-left: 150px;
+}
+
+#home:hover,
+#cachorro:hover,
+#gato:hover,
+#peixe:hover,
+#passaro:hover,
+#outros:hover,
 #servico:hover {
     transform: scale(1.5);
-  }
+}
 
 .opcao {
     background-image: linear-gradient(to right, rgba(123, 104, 238), rgb(75, 0, 130));
-    border: 2px solid ;
-    border-color: black;
+    border: 2px solid black;
     border-radius: 110px;
     margin-top: -80px;
     font-size: 25px;
     display: flex; 
+    width: 80%;
+    margin-left: 100px;
+    height: 70px;
 }
-
 .propaganda{
     display: flex;
     margin: 50px;
@@ -345,6 +292,12 @@ img {
             left: 950px;
             top: 135px;
             bottom: 250px;
+          }
+
+          #image{
+            margin-left: 100px;
+            width: 10000px;
+            border-radius: 20px;
           }
 
        
