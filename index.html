@@ -10,22 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
-    <script src="../JavaScript/java.js"></script>
+    
 
 </head>
 <body>
 
     <div id="divBusca">
         <div id="imgLogo">
-        <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
+        <a href="index.html"><img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site"></a>
         </div>
         <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
         <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
-        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
+        <a href="contato.html" id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></a>
         <a href="sacola.html" id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></a>
         <a href="sacola.html"  id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></a>
         <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
-        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+        <a href="login.html" id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</a>
 
     </div>
     <nav class="opcao">
@@ -34,8 +34,8 @@
         <a id="gato" href="pagGato.html">🐈Gato</a>
         <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
         <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
-        <a id="outros" href="#">🐇Outros Pets</a>
-        <a id="servico" href="#">📋 Serviços</a>
+        <a id="outros" href="outroPets.html">🐇Outros Pets</a>
+        <a id="servico" href="sobre.html">📋 Sobre</a>
     </nav>
 
 
@@ -110,27 +110,31 @@
     </div>
     <script>
         function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-            
-            cart.push({
-                name: nomeProduto,
-                price: precoProduto,
-                image: imagemProduto
-            });
-    
-            localStorage.setItem('cart', JSON.stringify(cart));
-    
-            const mensagem = document.createElement('div');
-            mensagem.textContent = 'Produto adicionado a Sacola!';
-            mensagem.classList.add('mensagem');
-            document.body.appendChild(mensagem);
-    
-            setTimeout(function() {
-                mensagem.style.display = 'none';
-            }, 3000);
-    
-        }
+            if (!nomeProduto || !precoProduto || !imagemProduto) {
+                 console.error("Parâmetros inválidos para adicionarAoCarrinho.");
+                    return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.push({
+        name: nomeProduto,
+        price: precoProduto,
+        image: imagemProduto
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    const mensagem = document.createElement('div');
+    mensagem.textContent = 'Produto adicionado à sacola!';
+    mensagem.classList.add('mensagem');
+    document.body.appendChild(mensagem);
+
+    setTimeout(function() {
+        mensagem.style.display = 'none';
+    }, 3000);
+}
+
     </script>
 
 
@@ -229,12 +233,6 @@
     
 </section>
 
-<!-- <div class="servic"> 
-    <a id="frete" href="#">🚛 Frete Grátis Brasil</a>
-    <a id="semJuros" href="#">💳 Até 10x Sem Juros</a>
-    <a id="retire" href="#">🏪 Retire e Troque na Loja</a>
-    
-</div>-->
 
 <img src="../Imagens/imgBaixo.gif" alt="">
 <h3 id="proFavoritoGatos">Bem-estar e cuidados</h3>
@@ -304,6 +302,11 @@
     <li><a href="#">Tik Tok</a></li>
     <li><a href="#">Linkedln</a></li>
     </ul>
+
+    <ul>
+        
+        <a href="blog.html"><span class="two-colors">BLOG</span></a>
+        <a href="depoimento.html"><span class="two-colors">DEPOIMENTO</span></a>        </ul>
 
 </footer>
 

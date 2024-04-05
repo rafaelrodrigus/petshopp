@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depoimentos - Pet Shop</title>
+    <link rel="stylesheet" href="/CSS/styleDepoimento">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            width: calc(100% - 20px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Depoimentos de Clientes</h2>
+    <div id="depoimentos-container" class="depoimentos-container"></div>
+    <button id="novoDepoimentoBtn" class="btn">Adicionar Novo Depoimento</button>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Novo Depoimento</h2>
+        <form id="depoimentoForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Depoimento</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const depoimentos = [
+        { nome: "Maria", mensagem: "Excelente atendimento e produtos de qualidade!" },
+        { nome: "João", mensagem: "Meu pet adorou os brinquedos que comprei aqui!" },
+        { nome: "Ana", mensagem: "Recomendo a todos os donos de pets. Ótimo serviço!" }
+    ];
+    
+    const depoimentosContainer = document.getElementById('depoimentos-container');
+    const novoDepoimentoBtn = document.getElementById('novoDepoimentoBtn');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const depoimentoForm = document.getElementById('depoimentoForm');
+    
+    function mostrarDepoimentos() {
+        depoimentosContainer.innerHTML = '';
+        depoimentos.forEach(depoimento => {
+            const depoimentoDiv = document.createElement('div');
+            depoimentoDiv.classList.add('depoimento');
+            depoimentoDiv.innerHTML = `<strong>${depoimento.nome}:</strong> ${depoimento.mensagem}`;
+            depoimentosContainer.appendChild(depoimentoDiv);
+        });
+    }
+    
+    novoDepoimentoBtn.onclick = function() {
+        modal.style.display = 'block';
+    }
+    
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+    
+    depoimentoForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+    
+        depoimentos.push({ nome: nome, mensagem: mensagem });
+        mostrarDepoimentos();
+        modal.style.display = 'none';
+        depoimentoForm.reset();
+    });
+    
+    mostrarDepoimentos();
+</script>
+</body>
+</html>

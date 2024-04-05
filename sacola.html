@@ -10,125 +10,154 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+    <script src="../JavaScript/java.js"></script>
 </head>
 <body>
 
-</head>
-<body>
-
-    <div id="divBusca">
-        <div id="imgLogo">
-            <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
-        </div>
-        <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
-        <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
-        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
-        <button id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></button>
-        <button id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></button>
-        <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
-        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+<div id="divBusca">
+    <div id="imgLogo">
+        <a href="index.html"><img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site"></a>
     </div>
+    <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
+    <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
+    <a href="contato.html" id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></a>
+    <button id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></button>
+    <button id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></button>
+    <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
+    <a href="login.html" id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</a>
+</div>
 
-    <nav class="opcao">
-        <a id="home" href="index.html">🏠Home</a>
-        <a id="cachorro" href="pagCachorro.html">🐕Cachorro</a>
-        <a id="gato" href="pagGato.html">🐈Gato</a>
-        <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
-        <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
-        <a id="outros" href="#">🐇Outros Pets</a>
-        <a id="servico" href="#">📋 Serviços</a>
-    </nav>
-    <h1>Carrinho de Compras</h1>
-    <ul id="cart"></ul>
-    <div id="totalCarrinho"><strong>Total: R$ 0.00</strong></div>
-    <a href="index.html">Voltar para a Loja</a>
+<nav class="opcao">
+    <a id="home" href="index.html">🏠Home</a>
+    <a id="cachorro" href="pagCachorro.html">🐕Cachorro</a>
+    <a id="gato" href="pagGato.html">🐈Gato</a>
+    <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
+    <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
+    <a id="outros" href="outroPets.html">🐇Outros Pets</a>
+    <a id="servico" href="sobre.html">📋 Sobre</a>
+</nav>
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <h1>Carrinho de Compras</h1>
+        <ul id="cart"></ul>
+        
+    </div>
+    <div style="flex: 1; margin-left: 20px;">
+        <div id="cepTotalContainer">
+        <h1>Sacola</h1>
+        <label for="cepInput">Digite o CEP:</label>
+        <input type="text" id="cepInput">
+        <button onclick="buscarEndereco()">Buscar</button>
+        <div id="endereco"></div>
+    
 
-    <script>
-        function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        <div id="totalCarrinho"><strong>Total: R$ 0.00</strong></div>
 
-            const itemId = Date.now();
+        </div>
+    </div>
+</div>
+<script>
+    function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            cart.push({
-                id: itemId,
-                name: nomeProduto,
-                price: precoProduto,
-                image: imagemProduto
-            });
+        const itemId = Math.floor(Math.random() * 1000000); 
 
-            localStorage.setItem('cart', JSON.stringify(cart));
+        cart.push({
+            id: itemId,
+            name: nomeProduto,
+            price: precoProduto,
+            image: imagemProduto
+        });
 
-            displayCart();
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        displayCart();
+    }
+    function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const cartList = document.getElementById('cart');
+
+    cartList.innerHTML = '';
+
+    if (cart && cart.length > 0) {
+        cart.forEach(item => {
+            const cartItem = document.createElement('li');
+
+            const itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            itemImage.alt = item.name;
+            cartItem.appendChild(itemImage);
+
+            const itemName = document.createElement('p');
+            itemName.textContent = item.name;
+            cartItem.appendChild(itemName);
+
+            const itemPrice = document.createElement('p');
+            itemPrice.textContent = item.price;
+            cartItem.appendChild(itemPrice);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remover';
+            removeButton.onclick = function() {
+                removerDoCarrinho(item.id);
+            };
+            cartItem.appendChild(removeButton);
+
+            cartList.appendChild(cartItem);
+        });
+    } else {
+        cartList.innerHTML = '<p>Carrinho vazio</p>';
+    }
+}
+
+function removerDoCarrinho(itemId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const index = cart.findIndex(item => item.id === itemId);
+    
+    if (index !== -1) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+        calcularTotal();
+    }
+}
+    function calcularTotal() {
+        let total = 0;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        for (let item of cart) {
+            total += parseFloat(item.price.replace('R$ ', ''));
         }
 
-        function removerDoCarrinho(itemId) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            const index = cart.findIndex(item => item.id === itemId);
-            if (index !== -1) {
-                cart.splice(index, 1);
-
-                localStorage.setItem('cart', JSON.stringify(cart));
-
-                displayCart();
-
-                calcularTotal();
-            }
+        const totalCarrinhoElement = document.getElementById('totalCarrinho');
+        if (totalCarrinhoElement) {
+            totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2)}`;
         }
+    }
 
-        function displayCart() {
-            const cart = JSON.parse(localStorage.getItem('cart'));
-            const cartList = document.getElementById('cart');
-
-            cartList.innerHTML = '';
-
-            if (cart && cart.length > 0) {
-                cart.forEach(item => {
-                    const cartItem = document.createElement('li');
-
-                    const itemImage = document.createElement('img');
-                    itemImage.src = item.image;
-                    itemImage.alt = item.name;
-                    cartItem.appendChild(itemImage);
-
-                    const itemName = document.createElement('p');
-                    itemName.textContent = item.name;
-                    cartItem.appendChild(itemName);
-
-                    const itemPrice = document.createElement('p');
-                    itemPrice.textContent = item.price;
-                    cartItem.appendChild(itemPrice);
-
-                    const removeButton = document.createElement('button');
-                    removeButton.textContent = 'Remover';
-                    removeButton.onclick = function() {
-                        removerDoCarrinho(item.id);
-                    };
-                    cartItem.appendChild(removeButton);
-
-                    cartList.appendChild(cartItem);
-                });
+    function buscarEndereco() {
+        var cep = document.getElementById('cepInput').value;
+        var url = `https://viacep.com.br/ws/${cep}/json/`;
+        
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if(data.erro) {
+                document.getElementById('endereco').innerText = "CEP não encontrado.";
             } else {
-                cartList.innerHTML = '<p>Carrinho vazio</p>';
+                var endereco = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
+                document.getElementById('endereco').innerText = endereco;
             }
-        }
+        })
+        .catch(error => console.error('Erro:', error));
+    }
 
-        function calcularTotal() {
-            let total = 0;
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            for (let item of cart) {
-                total += parseFloat(item.price.replace('R$ ', ''));
-            }
-
-            const totalCarrinhoElement = document.getElementById('totalCarrinho');
-            if (totalCarrinhoElement) {
-                totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2)}`;
-            }
-        }
-
-        window.onload = displayCart;
-    </script>
+    window.onload = function() {
+        displayCart();
+        calcularTotal();
+    };
+</script>
 
 </body>
-
+</html>

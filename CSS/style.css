@@ -3,6 +3,12 @@
     align-items: center; 
 }
 
+#btnEntrar{
+    color: black;
+    margin-top: -90px;
+    margin-left: -30px;
+}
+
 #imgLogo {   
     margin-top: -100px;
     margin-right: 10px; 
@@ -116,6 +122,11 @@ img {
 .servi {
     margin-top: 20px;
 }
+#telefone
+{
+    margin-left: 30px;
+}
+
 
 #banho,
 #veterinario,
@@ -322,3 +333,25 @@ p#preco {
     margin: 0 auto; 
 }
 
+#blog{
+   border: 1px solid black;
+   box-shadow: 4px 3px 3px ;
+}
+
+ .two-colors {
+    font-size: 70px;
+    background: linear-gradient(to right,
+       blue 20%,
+       green 20%, green 40%,
+       red 40%, red 60%,
+       orange 60%, orange 80%,
+       purple 80%
+     );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+     font-weight: 900;
+     font-family: Arial;
+ }
+
+ 

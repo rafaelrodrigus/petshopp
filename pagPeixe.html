@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
-    <link rel="stylesheet" href="/CSS/styleCachorro.css">]
+    <link rel="stylesheet" href="/CSS/styleCachorro.css">
 
 </head>
 
@@ -13,15 +13,15 @@
 
     <div id="divBusca">
         <div id="imgLogo">
-            <img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site">
+            <a href="index.html"><img src="../icones/logotipoSEMFundo.png" alt="Logo do Site" title="Logotipo do Site"></a>
         </div>
         <input type="text" id="txtBusca" placeholder="O que seu pet precisa?" />
         <button title="Buscar"><img src="../icones/iconeLupa.png" alt="Ícone de busca"></button>
-        <button id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></button>
+        <a href="contato.html" id="telefone" title="Contato"><img src="../icones/iconeTelefone.png" alt="Ícone de Telefone"></a>
         <button id="favorito" title="Favorito"><img src="../icones/iconeFavorito.png" alt="Ícone de Favorito"></button>
         <button id="sacola" title="Sacola"><img src="../icones/iconeSacola.png" alt="Ícone de sacola "></button>
         <button id="perfil" title="Perfil"><img src="../icones/iconePerfil.png" alt="Ícone de Perfil"></button>
-        <button id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</button>
+        <a href="login.html" id="btnEntrar" title="Entrar/Cadastrar">Entrar/Cadastrar</a>
     </div>
 
     <nav class="opcao">
@@ -30,8 +30,8 @@
         <a id="gato" href="pagGato.html">🐈Gato</a>
         <a id="peixe" href="pagPeixe.html">🐟Peixe</a>
         <a id="passaro" href="pagPassaro.html">🐦Passaro</a>
-        <a id="outros" href="#">🐇Outros Pets</a>
-        <a id="servico" href="#">📋 Serviços</a>
+        <a id="outros" href="outroPets.html">🐇Outros Pets</a>
+        <a id="servico" href="sobre.html">📋 Sobre</a>
     </nav>
 
     <div class="container">
@@ -61,9 +61,31 @@
 
         <section class="produtos">
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
+                <img src="/Imagens/pr1.jpg" alt="Alimento para Pets">
+                <h3>Ração para Peixe</h3>
+                <p class="descricao">Bactericida Atlantys Mundo Animal para Peixes 15ml</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 33,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="/Imagens/pr2.jpg" alt="Alimento para Pets">
+                <h3>Aquário</h3>
+                <p class="descricao">Aquário Curvo Boyu Led EA-80E 95L</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 2.399,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="satisfacao-numero">4.5</span> 
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="/Imagens/pr3.jpg" alt="Alimento para Pets">
+                <h3>Filtro</h3>
+                <p class="descricao">Filtro Externo Boyu WF-2015 para Aquário 150 litros/H 6W</p>
                 <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
@@ -72,10 +94,10 @@
                 <button class="favoritar" data-id="produto1">Favoritar</button>
             </div>
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <img src="/Imagens/pr4.jpg" alt="Alimento para Pets">
+                <h3>Sifão</h3>
+                <p class="descricao">Sifão Para Aquário Boyu SC-002</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 49,99</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
                     <span class="satisfacao-numero">4.5</span> 
@@ -83,10 +105,20 @@
                 <button class="favoritar" data-id="produto1">Favoritar</button>
             </div>
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <img src="/Imagens/pr5.jpg" alt="Alimento para Pets">
+                <h3>Ração Nutribetta</h3>
+                <p class="descricao">Ração Nutribetta Nutricon para Peixes 12g</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 13,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <div class="satisfacao">
+                    <span class="estrela">&#9733;</span>
+                </div>
+                <button class="favoritar" data-id="produto1">Favoritar</button>
+            </div>
+            <div class="produto">
+                <img src="/Imagens/pr6.jpg" alt="Alimento para Pets">
+                <h3>Alimento Alcon</h3>
+                <p class="descricao">Alimento Alcon Férias para 15 Dias Holiday - 20g</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 13,99</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
                     <span class="satisfacao-numero">4.5</span> 
@@ -94,10 +126,10 @@
                 <button class="favoritar" data-id="produto1">Favoritar</button>
             </div>
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <img src="/Imagens/pr7.jpg" alt="Alimento para Pets">
+                <h3>Ração Alcon </h3>
+                <p class="descricao">Ração Alcon para Peixes Gold Fish Colour 220g</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 75,99</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
                     <span class="satisfacao-numero">4.5</span> 
@@ -105,20 +137,10 @@
                 <button class="favoritar" data-id="produto1">Favoritar</button>
             </div>
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <img src="/Imagens/pr8.jpg" alt="Alimento para Pets">
+                <h3>Alimento Poytara </h3>
+                <p class="descricao">Alimento Poytara para Peixe Betta</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 13,99</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
                     <span class="satisfacao-numero">4.5</span> 
@@ -126,65 +148,10 @@
                 <button class="favoritar" data-id="produto1">Favoritar</button>
             </div>
             <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
+                <img src="/Imagens/pr9.jpg" alt="Alimento para Pets">
                 <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                    <span class="satisfacao-numero">4.5</span> 
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                    <span class="satisfacao-numero">4.5</span> 
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                    <span class="satisfacao-numero">4.5</span> 
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                    <span class="satisfacao-numero">4.5</span> 
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
-                <div class="satisfacao">
-                    <span class="estrela">&#9733;</span>
-                    <span class="satisfacao-numero">4.5</span>
-                </div>
-                <button class="favoritar" data-id="produto1">Favoritar</button>
-            </div>
-            <div class="produto">
-                <img src="../Imagens/racao2.jpg" alt="Alimento para Pets">
-                <h3>Ração Seca para Cães</h3>
-                <p class="descricao">Ração seca para cães de todas as idades. Nutrição completa e equilibrada.</p>
-                <p class="preco">Preço: <span class="preco-original">R$ 99,99</span> <span class="desconto">Desconto: 10%</span></p>
+                <p class="descricao">Alimento para Peixe Tetra Peixe BettaMin Pellets - 29g</p>
+                <p class="preco">Preço: <span class="preco-original">R$ 41,90</span> <span class="desconto">Desconto: 10%</span></p>
                 <div class="satisfacao">
                     <span class="estrela">&#9733;</span>
                     <span class="satisfacao-numero">4.5</span> 
